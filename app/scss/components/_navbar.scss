@@ -1,0 +1,31 @@
+.navbar {
+  margin-top: 2em;
+  width: 100%;
+
+  &__item {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 2em;
+    text-align: center;
+
+    &__link {
+      display: block;
+      padding-bottom: 0.7em;
+      background: rgb(0,212,255);
+      background: linear-gradient(90deg, transparentize(rgba(0,212,255,0.1), 0.5) 0%, transparentize(rgba(0,212,255,1), 0.5) 100%);
+      background-size: 100% 5px;
+      background-repeat: no-repeat;
+      background-clip: border-box;
+      background-position: bottom;
+      color: transparentize($link-color, 0.5);
+      font-size: 1.3em;
+      text-transform: uppercase;
+
+      &:hover,
+      &:active {
+        color: $link-color;
+        background-image: linear-gradient(90deg, rgba(0,212,255,0.1) 0%, rgba(0,212,255,1));
+      }
+    }
+  }
+}

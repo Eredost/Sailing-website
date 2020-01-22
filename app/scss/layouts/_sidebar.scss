@@ -1,0 +1,12 @@
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 75%;
+  background-color: $bg-color;
+  padding: 2em 3em;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
