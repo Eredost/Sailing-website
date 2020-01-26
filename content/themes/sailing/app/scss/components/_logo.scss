@@ -1,0 +1,14 @@
+.logo {
+  margin-top: 2em;
+
+  &__image {
+    width: 75px;
+  }
+
+  &__text {
+    text-align: center;
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 1.4em;
+  }
+}
