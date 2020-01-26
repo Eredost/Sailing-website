@@ -1,2 +1,10 @@
-/public
-/node_modules
+# Wordpress config file
+wp-config.php
+
+# Wordpress folders
+/wp
+/vendor
+/content/*
+!/content/themes
+/content/themes/*
+!/content/themes/sailing
