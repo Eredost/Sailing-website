@@ -3,39 +3,46 @@ require('jquery.scrollex');
 var app = {
   init: function() {
     console.log('init');
-    app.watchSection();
+
+    var rellax = new Rellax('.header__title', {
+      speed: 3
+    });
+
+    $('.page > *[id]').each(function () {
+      var id = $(this).attr('id');
+
+      $(this).scrollex({
+        mode: 'middle',
+        enter: function () {
+          app.handleEnterElement(id);
+        },
+        leave: function () {
+          app.handleLeaveElement(id);
+        }
+      });
+    });
+
+    $('.navbar__item__link[href*="#"]:not([href="#"])').on('click', app.handleLinksClick)
   },
 
-  watchSection: function() {
-    $('#intro').scrollex({
-      mode: 'middle',
-      enter: function () {
-        $('.navbar__item__link[href="#intro"]').addClass('active');
-      },
-      leave: function () {
-        $('.navbar__item__link[href="#intro"]').removeClass('active');
-      }
-    });
+  handleEnterElement: function (element_id) {
+    $('.navbar__item__link[href="#' + element_id + '"]').addClass('active');
+  },
 
-    $('#articles').scrollex({
-      mode: 'middle',
-      enter: function () {
-        $('.navbar__item__link[href="#articles"]').addClass('active');
-      },
-      leave: function () {
-        $('.navbar__item__link[href="#articles"]').removeClass('active');
-      }
-    });
+  handleLeaveElement: function (element_id) {
+    $('.navbar__item__link[href="#' + element_id + '"]').removeClass('active');
+  },
 
-    $('#counters').scrollex({
-      mode: 'middle',
-      enter: function () {
-        $('.navbar__item__link[href="#counters"]').addClass('active');
-      },
-      leave: function () {
-        $('.navbar__item__link[href="#counters"]').removeClass('active');
-      }
-    });
+  handleLinksClick: function (event) {
+    var clickedElement = event.target;
+    var target = $(clickedElement.hash);
+
+    if (target.length) {
+      var targetPosition = target.offset().top;
+      $('html, body').animate({
+        'scrollTop': targetPosition
+      }, 700);
+    }
   }
 };
 

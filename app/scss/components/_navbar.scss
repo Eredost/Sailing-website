@@ -11,20 +11,17 @@
     &__link {
       display: block;
       padding-bottom: 0.7em;
-      background: rgb(0,212,255);
-      background: linear-gradient(90deg, transparentize(rgba(0,212,255,0.1), 0.5) 0%, transparentize(rgba(0,212,255,1), 0.5) 100%);
-      background-size: 100% 5px;
-      background-repeat: no-repeat;
-      background-clip: border-box;
-      background-position: bottom;
-      color: transparentize($link-color, 0.5);
+      border-bottom: 4px solid;
+      border-image: linear-gradient(90deg, rgba(0,212,255,0.1) 0%, rgba(0,212,255,1) 100%) 10;
+      color: $link-color;
       font-size: 1.3em;
       text-transform: uppercase;
+      opacity: 0.4;
+      transition: 0.3s;
 
       &:hover,
       &.active {
-        color: $link-color;
-        background-image: linear-gradient(90deg, rgba(0,212,255,0.1) 0%, rgba(0,212,255,1));
+        opacity: 1;
       }
     }
   }
