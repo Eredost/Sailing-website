@@ -22,7 +22,7 @@ if(!function_exists('setup_sailing')) {
         ]);
 
         add_theme_support('post-thumbnails');
-        set_post_thumbnail_size(400, 400);
+        set_post_thumbnail_size(500, 500);
     }
 }
 

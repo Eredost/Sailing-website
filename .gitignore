@@ -8,3 +8,4 @@ wp-config.php
 !/content/themes
 /content/themes/*
 !/content/themes/sailing
+!content/uploads
